@@ -131,10 +131,10 @@ void rotation(uint32_t grid[rows][columns], struct tetromino curr[]){
   struct tetromino temp[4];
   memcpy(temp, curr, 4 * sizeof(struct tetromino));
   for(uint32_t i = 0; i < 4; i++){
-    int x = curr[i].y - curr[1].y;
-    int y = curr[i].x - curr[1].x;
-    curr[i].x = curr[1].x - x;
-    curr[i].y = curr[1].y + y;
+    int x = curr[i].x - curr[1].x;
+    int y = curr[i].y - curr[1].y;
+    curr[i].x = curr[1].x - y;
+    curr[i].y = curr[1].y + x;
     if(!(curr[i].x >= 0 && curr[i].x <= 9 && curr[i].y <= 20) || grid[curr[i].y][curr[i].x] != 0){
       memcpy(curr, temp, 4 * sizeof(struct tetromino));
       break;
@@ -144,6 +144,7 @@ void rotation(uint32_t grid[rows][columns], struct tetromino curr[]){
 
 
 void newTetromino(struct tetromino curr[]){
+  /*
   switch(rand() % 7 + 1){
     case 1:{ memcpy(curr, I, 4 * sizeof(curr[0])); break;}
     case 2:{ memcpy(curr, O, 4 * sizeof(curr[0])); break;}
@@ -154,6 +155,8 @@ void newTetromino(struct tetromino curr[]){
     case 7:{ memcpy(curr, Z, 4 * sizeof(curr[0])); break;}
     default:{printf("error! default\n");}
   }
+  */
+  memcpy(curr, S, 4 * sizeof(curr[0]));
 }
 
 void copyToGrid(uint32_t grid[rows][columns], struct tetromino curr[]){
@@ -196,6 +199,7 @@ int main(){
         rotateCheck = false;
       }else rotateCheck = true;
       drawGrid(grid, curr);
+      /*
       counter += 100;
       if(counter >= 500){
           if(move(grid, curr, 0)){
@@ -204,6 +208,7 @@ int main(){
           }
           counter = 0;
       }
+      */
       SDL_Delay(85);
     }
   }

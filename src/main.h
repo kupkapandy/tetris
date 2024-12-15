@@ -25,6 +25,6 @@ const struct tetromino O[4] = {{5, 0},{6, 0},{5, 1},{6, 1}};
 const struct tetromino T[4] = {{4, 0},{5, 0},{6, 0},{5, 1}};
 const struct tetromino J[4] = {{5, 0},{5, 1},{4, 2},{5, 2}};
 const struct tetromino L[4] = {{5, 0},{5, 1},{5, 2},{6, 2}};
-const struct tetromino S[4] = {{4, 0},{5, 1},{5, 0},{6, 0}};
+const struct tetromino S[4] = {{4, 1},{5, 1},{5, 0},{6, 0}};
 const struct tetromino Z[4] = {{4, 0},{5, 0},{5, 1},{6, 1}};
 
